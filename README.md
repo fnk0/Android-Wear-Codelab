@@ -22,7 +22,8 @@ Feel free to use or modify this codelab for your own purpose.
 
 1. Start the Emulator with the AVD Manager
 2. Start the Android Wear App on your device and click in connect.
-3. Navigate to android-studio/sdk/platform-tools folder and use the following command: adb -d forward tcp:5601 tcp:5601
+3. Navigate to android-studio/sdk/platform-tools folder and use the following command: 
+```adb -d forward tcp:5601 tcp:5601``` (This command should be used every time you connect your phone to the computer. Or every time you restart the emulator). If for some reason you still can not connect both devices try using ```adb devices``` and ensure that both are connected. 
 
 <img src="https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/android-wear-app.png" alt="Android Wear Preview App" style="width:100px;height:150px">
 
