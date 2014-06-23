@@ -222,7 +222,6 @@ So in our **MainActivity** let's define the sendNotificationMethod:
 
 ```java
 public void sendNotification(View view) {
-
     //Now let's add a switch to catch the button that has been clicked
     // We also add a case for each of the buttons.
     switch(view.getId()) {
@@ -239,5 +238,4 @@ public void sendNotification(View view) {
             break;
     }
 }
-
 ```
