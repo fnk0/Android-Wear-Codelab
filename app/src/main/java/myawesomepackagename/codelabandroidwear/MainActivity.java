@@ -1,12 +1,15 @@
 package myawesomepackagename.codelabandroidwear;
 
 import android.app.Activity;
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preview.support.v4.app.NotificationManagerCompat;
+import android.preview.support.wearable.notifications.WearableNotifications;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,7 +53,8 @@ public class MainActivity extends Activity {
     private EditText mCustomTitle, mCustomMessage;
     private RadioGroup mCustomIconGroup, showHideIconGroup;
     private int mCustomIcon;
-    private boolean showIcon;
+    private boolean showIcon = false;
+    private String LOG_TAG = "WEAR";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,8 +137,12 @@ public class MainActivity extends Activity {
         // event description that may not fit the normal content text.
         NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
 
-
         NotificationCompat.Builder mBuilder = null;
+        Notification mNotification = null;
+
+        // Get an instance of the NotificationManager service
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(this);
 
         switch (view.getId()) {
             case R.id.simpleNotification:
@@ -172,21 +180,29 @@ public class MainActivity extends Activity {
                         .setStyle(bigStyle);
                 break;
             case R.id.sendCustomNotification:
-
                 mBuilder = new NotificationCompat.Builder(this)
                         .setSmallIcon(mCustomIcon)
                         .setContentTitle(mCustomTitle.getText().toString())
                         .setContentText(mCustomMessage.getText().toString())
                         .setContentIntent(viewPendingIntent);
-                break;
 
+                // This is an example of the NEW WearableNotification SDK.
+                // The WearableNotification has special functionality for wearable devices
+                // By example the setHintHideIcon hides the APP ICON from the notification.
+                mNotification = new WearableNotifications.Builder(mBuilder)
+                        .setHintHideIcon(!showIcon)
+                        .build();
+                break;
         }
 
-        // Get an instance of the NotificationManager service
-        NotificationManagerCompat notificationManager =
-                NotificationManagerCompat.from(this);
-
-        // Build the notification and issues it with notification manager.
-        notificationManager.notify(notificationId, mBuilder.build());
+        if(view.getId() != R.id.sendCustomNotification) {
+            // Build the notification and issues it with notification manager.
+            notificationManager.notify(notificationId, mBuilder.build());
+            Log.d(LOG_TAG, "Normal Notification");
+        } else {
+            // Use the Wearable Notification Builder
+            notificationManager.notify(notificationId, mNotification);
+            Log.d(LOG_TAG, "Wear Notification");
+        }
     }
 }
