@@ -87,3 +87,122 @@ The android wear notifications by default have an icon embed to it. So let's cha
 
 #### Creating the Main Activity XML-Layout
 
+So this might be a big chunk of code... if you alredy know Android XML layout feel free to copy and paste it. If not take a moment to go through each one of the elements! 
+
+```xml
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#34495e"
+    >
+    <Button
+        android:id="@+id/simpleNotification"
+        android:text="Simple Notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:onClick="sendNotification"
+    />
+    <Button
+        android:id="@+id/bigNotification"
+        android:text="Big View Notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:onClick="sendNotification"
+    />
+    <Button
+        android:id="@+id/bigNotificationWithAction"
+        android:text="Simple Notification With Action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:onClick="sendNotification"
+    />
+    <TextView
+        android:text="Custom Notification"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        />
+    <EditText
+        android:id="@+id/notificationTitle"
+        android:hint="Notification Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        />
+    <EditText
+        android:id="@+id/notificationMessage"
+        android:hint="Notification Message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+    />
+    <RadioGroup
+        android:id="@+id/iconGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+        <RadioButton
+            android:id="@+id/icon1"
+            android:drawableRight="@drawable/ic_wear_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+        />
+        <RadioButton
+            android:id="@+id/icon2"
+            android:drawableRight="@drawable/ic_notification_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+        />
+        <RadioButton
+            android:id="@+id/icon3"
+            android:drawableRight="@drawable/ic_notification3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            />
+    </RadioGroup>
+    <RadioGroup
+        android:id="@+id/hideIconGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
+        <RadioButton
+            android:id="@+id/hideIcon"
+            android:text="Hide Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            />
+        <RadioButton
+            android:id="@+id/showIcon"
+            android:text="Show Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            />
+    </RadioGroup>
+    <Button
+        android:id="@+id/sendCustomNotification"
+        android:text="Send Custom Notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sendNotification"
+    />
+</LinearLayout>
+```
