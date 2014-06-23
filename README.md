@@ -373,6 +373,14 @@ case R.id.simpleNotification:
     break;
 ```
 
+Now after the switch we add the following code to display or notification:
+```java
+// This code goes after the switch because is common to all our notifications.
+// Build the notification and issues it with notification manager.
+notificationManager.notify(notificationId, mBuilder.build());
+Log.d(LOG_TAG, "Normal Notification");
+```
+
 * Now let's try it out!! Runt he App and click on the first button.
 The notification should be displayed on your phone like this:
 
@@ -474,4 +482,39 @@ case R.id.bigNotificationWithAction:
             .addAction(R.drawable.ic_photo, "See Photo", photoPending) // This is our extra action. With an Extra Icon and pointing to the other PendingIntent
             .setStyle(bigStyle); // Add the bigStyle
     break;
+```
+
+###### Creating our custom notification.
+Our custom notification will let the user set a title, a message, select the Icon to display in the notification and will give an option if the user wants to show or not the App Icon.
+```java
+case R.id.sendCustomNotification:
+    // We instantiate the builder again
+    mBuilder = new NotificationCompat.Builder(this)
+            .setSmallIcon(mCustomIcon) // This time we set the icon to be whenever icon is selected by the user 
+            .setContentTitle(mCustomTitle.getText().toString()) // We set the contentTitle to the text in the EditText
+            .setContentText(mCustomMessage.getText().toString()) // We set the contentText to the message set by the user
+            .setContentIntent(viewPendingIntent); // set an intent to receive the Open action.
+
+    // This is an example of the NEW WearableNotification SDK.
+    // The WearableNotification has special functionality for wearable devices
+    // By example the setHintHideIcon hides the APP ICON from the notification.
+    mNotification = new WearableNotifications.Builder(mBuilder)
+            .setHintHideIcon(!showIcon) // This will determine if we should show or not the Icon of the app
+            .build();
+    break;
+```
+Now that we have another type of notification to display we need to add a case to our notify call.
+After the switch replace the code that is already there with:
+```java
+// This check will allow us to display the normal notification or the Wearable notification if the
+// notification is a CustomNotification
+if(view.getId() != R.id.sendCustomNotification) {
+    // Build the notification and issues it with notification manager.
+    notificationManager.notify(notificationId, mBuilder.build());
+    Log.d(LOG_TAG, "Normal Notification");
+} else {
+    // Use the Wearable Notification Builder
+    notificationManager.notify(notificationId, mNotification);
+    Log.d(LOG_TAG, "Wear Notification");
+}
 ```
