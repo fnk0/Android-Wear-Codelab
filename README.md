@@ -460,18 +460,18 @@ mImageView.setImageResource(extraIntent.getIntExtra("photo", 0)); // The zero is
 4. Now that our Second Activity is set and ready to receive some data we procede to build our notificaiton.
 ```java
 case R.id.bigNotificationWithAction:
+    // Create the new intent that is gonna receive the information from our action.
     Intent photoIntent = new Intent(this, SecondActivity.class); // Intent pointing to our second activity
     photoIntent.putExtra("message", intentExtra); // Set the extra message that will open in the next activity
     photoIntent.putExtra("photo", R.drawable.ic_sample_codelab); // Send the photo to the next activity
     
     PendingIntent photoPending = PendingIntent.getActivity(this, 0, photoIntent, 0); // set a new pending intent
-    
-    bigStyle.bigText("Check out this picture!! :D");
+    bigStyle.bigText("Check out this picture!! :D"); // Message in the Big Text
     mBuilder = new NotificationCompat.Builder(this)
-            .setSmallIcon(R.drawable.ic_wear_notification)
-            .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_sample_codelab))
+            .setSmallIcon(R.drawable.ic_wear_notification) // Small icon for our notification
+            .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_sample_codelab)) // The PNG picture
             .setContentIntent(viewPendingIntent) // This will be the default OPEN button.
             .addAction(R.drawable.ic_photo, "See Photo", photoPending) // This is our extra action. With an Extra Icon and pointing to the other PendingIntent
-            .setStyle(bigStyle);
+            .setStyle(bigStyle); // Add the bigStyle
     break;
 ```
