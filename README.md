@@ -60,10 +60,12 @@ Feel free to use or modify this codelab for your own purpose.
 ![dependencies] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2023.04.15.png)
 
 <pre style="background:rgba(238,238,238,0.92);color:#000">
-```groovy
+```java
+
 dependencies {
     compile 'com.android.support:support-v4:19.1.+' // Support libraries
     compile fileTree(dir: 'libs', include: ['*.jar']) // This compiles all the .jar inside libs folder
 }
+
 ```
 </pre>
