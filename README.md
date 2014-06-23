@@ -409,9 +409,9 @@ case R.id.bigNotification:
 For this Action we will create another activity. Our goal is to start another activity from the intent and set a message + show the picture that is set as the largeIcon.
 
 1. Create the new Activity:
-..* Right click any folder inside your app package -> New -> Activity -> Blank Activity
-..* Give it a name : SecondActivity
-..* Set up the XML layout elements:
+* Right click any folder inside your app package -> New -> Activity -> Blank Activity
+* Give it a name : SecondActivity
+* Set up the XML layout elements:
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
