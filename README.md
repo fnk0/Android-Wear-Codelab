@@ -27,8 +27,10 @@ Feel free to use or modify this codelab for your own purpose.
 <img src="https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot_2014-06-22-22-22-30.png" alt="Android Wear Preview App" style="width:100px;height:150px">
 
 <font color='red'> Not Connected :( </font>
+
 ![Not connected] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.22.47.png)
 
 <font color='red'> Connected :) </font>
+
 ![Connected] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.24.08.png)
 
