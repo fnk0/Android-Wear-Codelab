@@ -375,10 +375,13 @@ case R.id.simpleNotification:
 
 * Now let's try it out!! Runt he App and click on the first button.
 The notification should be displayed on your phone like this:
+
 ![firstNotification](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/notifications-1.fw.png)
 
 * The notifications should also appear on the device like this:
+
 ![wearNotification](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/simple_not.png)
 
 * The intent will be displayed with a Open Button:
+
 ![wearNotification2](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/simple_not2.png)
