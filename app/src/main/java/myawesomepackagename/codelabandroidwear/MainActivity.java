@@ -50,22 +50,25 @@ import android.widget.RadioGroup;
  */
 public class MainActivity extends Activity {
 
-    private EditText mCustomTitle, mCustomMessage;
-    private RadioGroup mCustomIconGroup, showHideIconGroup;
-    private int mCustomIcon;
-    private boolean showIcon = false;
-    private String LOG_TAG = "WEAR";
+    private EditText mCustomTitle, mCustomMessage; // Edit text boxes for the custom notification
+    private RadioGroup mCustomIconGroup, showHideIconGroup; // Radiogroups with the Icon and settings for the custom notification
+    private int mCustomIcon; // The variable that will hold the ID of the custom icon to show
+    private boolean showIcon = false; // boolean that will tell if wear should show the app icon or not
+    private String LOG_TAG = "WEAR";  // Our LogCat tag for debugging purposes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Custom Title and Message for custom Notification
         mCustomTitle = (EditText) findViewById(R.id.notificationTitle);
         mCustomMessage = (EditText) findViewById(R.id.notificationMessage);
-        mCustomIconGroup = (RadioGroup) findViewById(R.id.iconGroup);
 
+        // RadioGroup for the customIcon
+        mCustomIconGroup = (RadioGroup) findViewById(R.id.iconGroup);
         mCustomIconGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            // The name of the ICONS will change based on how you named it....
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (group.getCheckedRadioButtonId()) {
@@ -82,6 +85,7 @@ public class MainActivity extends Activity {
             }
         });
 
+        // RadioGroup to determine if App Icons should be shown or not.
         showHideIconGroup = (RadioGroup) findViewById(R.id.hideIconGroup);
         showHideIconGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -96,7 +100,6 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
     }
 
     @Override
@@ -120,14 +123,16 @@ public class MainActivity extends Activity {
 
     // Define the method to send the notifications with the same name from the Android onClick from the XML Layout
     public void sendNotification(View view) {
+        // id- An identifier for this notification unique within your application.
+        int notificationId = 001;
 
+        // Common elements for all our notifications
         String eventTitle = "Sample Notification";
         String eventText = "Text for the notification.";
         String intentExtra = "This is an extra String!";
         String eventDescription = "This is supposed to  be a content that will not fit the normal content screen"
                 + " usually a bigger text, by example a long text message or email.";
 
-        int notificationId = 001;
         // Build intent for notification content
         Intent viewIntent = new Intent(this, MainActivity.class);
         PendingIntent viewPendingIntent =
