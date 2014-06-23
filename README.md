@@ -221,6 +221,7 @@ In our XML buttons we defined the ```xml android:onClick="sendNotification" ``` 
 So in our **MainActivity** let's define the sendNotificationMethod:
 
 ```java
+// Define the method to send the notifications with the same name from the Android onClick from the XML Layout
 public void sendNotification(View view) {
     //Now let's add a switch to catch the button that has been clicked
     // We also add a case for each of the buttons.
@@ -266,6 +267,7 @@ Inside onCreate we instantiate our UI elements and add retrieve information abou
         // RadioGroup for the customIcon
         mCustomIconGroup = (RadioGroup) findViewById(R.id.iconGroup);
         mCustomIconGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            // The name of the ICONS will change based on how you named it....
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (group.getCheckedRadioButtonId()) {
@@ -298,4 +300,54 @@ Inside onCreate we instantiate our UI elements and add retrieve information abou
             }
         });
     }
+```
+###### Let's send some notifications to our users!!
+Let's visit our ```java sendNotification()``` method again and some common code for our notifications. 
+We will add this before the switch so all the variables can be shared between the notifications.
+```java
+// Define the method to send the notifications with the same name from the Android onClick from the XML Layout
+public void sendNotification(View view) {
+
+        // Common elements for all our notifications
+        int notificationId = 001; // id- An identifier for this notification unique within your application.
+        String eventTitle = "Sample Notification"; // Title for the notificaiton
+        String eventText = "Text for the notification."; // Text for the notificaiton
+        String intentExtra = "This is an extra String!"; // Extra String to be passed to a intent
+        // A large String to be used by the BigStyle
+        String eventDescription = "This is supposed to  be a content that will not fit the normal content screen"
+                + " usually a bigger text, by example a long text message or email."; 
+ 
+        
+        // Build intent for notification content - This will take us to our MainActivity
+        Intent viewIntent = new Intent(this, MainActivity.class);
+        PendingIntent viewPendingIntent = PendingIntent.getActivity(this, 0, viewIntent, 0);
+
+        // Specify the 'big view' content to display the long
+        // event description that may not fit the normal content text.
+        NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
+        
+        // We instantiate as null because they will be changing based on which button is pressed
+        NotificationCompat.Builder mBuilder = null; 
+        Notification mNotification = null;
+
+        // Get an instance of the NotificationManager service
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+
+    
+    switch(view.getId()) {
+        case R.id.simpleNotification:
+            break;
+            
+        case R.id.bigNotification:
+            break;
+            
+        case R.id.bigNotificationWithAction:
+            break;
+            
+        case R.id.sendCustomNotification:
+            break;
+    }
+}
+
 ```
