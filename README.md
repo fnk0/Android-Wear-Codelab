@@ -373,6 +373,9 @@ case R.id.simpleNotification:
     break;
 ```
 
-Now let's try it out!! Runt he App and click on the first button.
+* Now let's try it out!! Runt he App and click on the first button.
 The notification should be displayed on your phone like this:
 ![firstNotification](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/notifications-1.fw.png)
+
+* The notifications should also appear on the device like this:
+![wearNotification]
