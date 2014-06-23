@@ -37,18 +37,18 @@ Feel free to use or modify this codelab for your own purpose.
 
 #### Creating a New Project
 
-###### Give a name and a Package Name:
+###### 1 - Give a name and a Package Name:
 
 ![newProject1] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.36.33.png)
 
-###### Select the Minimum SDK 15 - Android Wear 4.0 and above:
+###### 2 - Select the Minimum SDK 15 - Android Wear 4.0 and above:
 
 ![newProject2] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.36.42.png)
 
-###### Select Blank Activity:
+###### 3 - Select Blank Activity:
 
 ![blankActivity] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.36.50.png)
 
-###### Name the Activity:
+###### 4 - Name the Activity:
 
 ![nameActivity] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.37.15.png)
