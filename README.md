@@ -404,3 +404,37 @@ case R.id.bigNotification:
         .setStyle(bigStyle);
     break;
 ```
+
+###### 3. BigView notification with an Action button:
+For this Action we will create another activity. Our goal is to start another activity from the intent and set a message + show the picture that is set as the largeIcon.
+
+* Create the new Activity:
+..* Right click any folder inside your app package -> New -> Activity -> Blank Activity
+..* Give it a name : SecondActivity
+..* Set up the XML layout elements:
+```xml
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#34495e"
+    android:orientation="vertical"
+    tools:context="myawesomepackagename.codelabandroidwear.SecondActivity">
+
+    <TextView
+        android:id="@+id/extraMessage"
+        android:text="@string/hello_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/extraPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>
+```
