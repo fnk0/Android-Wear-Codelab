@@ -13,7 +13,7 @@ Feel free to use or modify this codelab for your own purpose.
 5. Android Wear Emulator 
 
 ###### Installing Necessary SDK Packages
-![SDK Manager] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/SDK%20Manager%20Screenshot.png)
+![SDK Manager](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/SDK%20Manager%20Screenshot.png)
 
 ###### Creating a new Android Wear Emulator
 ![Create Emulator](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Screenshot%202014-06-22%2022.09.12.png)
