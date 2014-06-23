@@ -4,6 +4,7 @@ Android-Wear-Codelab
 ###### Android Wear codelab for the GDG OSU Stillwater
 This codelab was developed by Marcus Gabilheri to be used in the GDG OSU Stillwater I/O Extended event.
 Feel free to use or modify this codelab for your own purpose.
+If you find a bug leave an issue and I will fix as soon as possible. The code works but in the tutorial I might have left something.
 
 ###### Necessary Software
 1. JDK - Java Development Kit
