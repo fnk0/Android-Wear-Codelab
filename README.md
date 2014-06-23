@@ -34,7 +34,6 @@ Feel free to use or modify this codelab for your own purpose.
 
 ![Connected] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.24.08.png)
 
-
 #### Creating a New Project
 
 ###### 1 - Give a name and a Package Name:
@@ -52,3 +51,16 @@ Feel free to use or modify this codelab for your own purpose.
 ###### 4 - Name the Activity:
 
 ![nameActivity] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.37.15.png)
+
+###### Add the necessary Libraries:
+
+![add-libs] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Adding-libs-folder.png)
+
+###### Add the necessary dependencies to the build.gradle file:
+![dependencies] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2023.04.15.png)
+
+<pre style="background:rgba(238,238,238,0.92);color:#000">dependencies {
+    compile <span style="color:#093">'com.android.support:support-v4:19.1.+'</span> <span style="color:#06f;font-style:italic">// Support libraries</span>
+    compile fileTree(<span style="color:#6782d3">dir</span>: <span style="color:#093">'libs'</span>, <span style="color:#6782d3">include</span>: [<span style="color:#093">'*.jar'</span>]) <span style="color:#06f;font-style:italic">// This compiles all the .jar inside libs folder</span>
+}
+</pre>
