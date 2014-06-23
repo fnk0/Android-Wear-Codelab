@@ -385,3 +385,22 @@ The notification should be displayed on your phone like this:
 * The intent will be displayed with a Open Button:
 
 ![wearNotification2](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/simple_not2.png)
+
+###### 2. Big View Notification
+Most of the contents of the big notification are the same. 
+There are a few different things to pay attention here.
+1. the Large Icon. The large icon is displayed behind the notificaiton as a background. The difference to the small icon is that we will be using BitmapFactory.decodeResource() decode a png file.
+2. The setContentTitle and setContentText will be overriden by the bigStyle.bigText and bigStyle.setBigContentTitle.
+```java
+case R.id.bigNotification:
+    bigStyle.bigText(eventDescription); // bigText will override setContentText
+    bigStyle.setBigContentTitle("Override Title"); // bigContentTitle Override the contentTitle
+    mBuilder = new NotificationCompat.Builder(this)
+        .setSmallIcon(R.drawable.ic_wear_notification)
+        .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_sample_codelab))
+        .setContentTitle(eventTitle) // This is unnecessary for the big notification if you use bigText
+        .setContentText(eventText) // Unnecessary if setBigContentTitle is Overriden
+        .setContentIntent(viewPendingIntent)
+        .setStyle(bigStyle);
+    break;
+```
