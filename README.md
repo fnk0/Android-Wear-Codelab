@@ -215,7 +215,7 @@ Android wear let's us extend the experience of our applications by sending a not
 The Notifications API also let's us add Actions to the notification.
 Example: In a TODO app we could send a notification to the user that is time for the task to be done and add actions such as "View Map" , "Complete Task", "Snooze", etc.. We can add a "unlimited" (try to limit your actions to a reasonable number of 3 or 4 maximum, you don't want your user to scroll forever to get to an action...) number of actions. 
 
-So enough has been said let's get our hands dirty!
+######So enough has been said let's get our hands dirty!
 
 In our XML buttons we defined the ```xml android:onClick="sendNotification" ``` method. 
 So in our **MainActivity** let's define the sendNotificationMethod:
@@ -238,4 +238,18 @@ public void sendNotification(View view) {
             break;
     }
 }
+```
+
+###### Adding the RadioGroups and Other UI Elements.
+
+Add the following instance variables to your class.
+
+```java
+public class MainActivity extends Activity {
+    private EditText mCustomTitle, mCustomMessage; // Edit text boxes for the custom notification
+    private RadioGroup mCustomIconGroup, showHideIconGroup; // Radiogroups with the Icon and settings for the custom notification
+    private int mCustomIcon; // The variable that will hold the ID of the custom icon to show
+    private boolean showIcon = false; // boolean that will tell if wear should show the app icon or not
+    private String LOG_TAG = "WEAR"; // Our LogCat tag for debugging purposes
+    ...
 ```
