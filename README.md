@@ -208,3 +208,36 @@ So this might be a big chunk of code... if you alredy know Android XML layout fe
 ```
 ###### Your layout should look similar (or identitical) to this.
 ![app-screenshot](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/app-screenshot2.png)
+
+#### Getting our hands into the coding (fun) part of the project.
+
+Android wear let's us extend the experience of our applications by sending a notification to the wear device.
+The Notifications API also let's us add Actions to the notification.
+Example: In a TODO app we could send a notification to the user that is time for the task to be done and add actions such as "View Map" , "Complete Task", "Snooze", etc.. We can add a "unlimited" (try to limit your actions to a reasonable number of 3 or 4 maximum, you don't want your user to scroll forever to get to an action...) number of actions. 
+
+So enough has been said let's get our hands dirty!
+
+In our XML buttons we defined the ```xml android:onClick="sendNotification" ``` method. 
+So in our **MainActivity** let's define the sendNotificationMethod:
+
+```java
+public void sendNotification(View view) {
+
+    //Now let's add a switch to catch the button that has been clicked
+    // We also add a case for each of the buttons.
+    switch(view.getId()) {
+        case R.id.simpleNotification:
+            break;
+            
+        case R.id.bigNotification:
+            break;
+            
+        case R.id.bigNotificationWithAction:
+            break;
+            
+        case R.id.sendCustomNotification:
+            break;
+    }
+}
+
+```
