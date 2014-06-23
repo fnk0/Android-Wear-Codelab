@@ -28,7 +28,7 @@
     />
     <Button
         android:id="@+id/bigNotificationWithAction"
-        android:text="Simple Notification With Action"
+        android:text="Big Notification With Action"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
