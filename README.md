@@ -77,4 +77,13 @@ dependencies {
 ###### 3. Check that your name and the destination is right and click in Finish. Android studio will generate all the necessary sizes for the notificiation icon as well the necessary folders.
 ![add-asset3](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/add-asset3.png)
 
+#### Changing our App Icon:
+
+The android wear notifications by default have an icon embed to it. So let's change the icon so our notifications are even more unique! 
+
+* Grab the app icon from from [here](https://github.com/fnk0/Android-Wear-Codelab/blob/master/assets/wear-codelab-icon.png) our use any other image you want. 
+* Repeat the same process of adding the notification Icon but this time select Launcher Icons. Ps: Do not change the name this time. If we leave ic_launcher as the name it will override our standard icon.
+* Click in Finish and now we are all set!
+
+#### Creating the Main Activity XML-Layout
 
