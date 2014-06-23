@@ -24,7 +24,7 @@ Feel free to use or modify this codelab for your own purpose.
 2. Start the Android Wear App on your device and click in connect.
 3. Navigate to android-studio/sdk/platform-tools folder and use the following command: adb -d forward tcp:5601 tcp:5601
 
-<img src="https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/android-wear-app.png" alt="Android Wear Preview App" style="width:100px;height:150px">
+<img src="https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/android-wear-app.png" alt="Android Wear Preview App" style="width:100px;height:150px">
 
 <font color='red'> Not Connected :( </font>
 
