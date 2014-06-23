@@ -240,10 +240,8 @@ public void sendNotification(View view) {
 }
 ```
 
-###### Adding the RadioGroups and Other UI Elements.
-
+###### Adding the RadioGroups and Other UI Elements:
 Add the following instance variables to your class.
-
 ```java
 public class MainActivity extends Activity {
     private EditText mCustomTitle, mCustomMessage; // Edit text boxes for the custom notification
@@ -252,4 +250,52 @@ public class MainActivity extends Activity {
     private boolean showIcon = false; // boolean that will tell if wear should show the app icon or not
     private String LOG_TAG = "WEAR"; // Our LogCat tag for debugging purposes
     ...
+```
+###### Instantiating the instance Variables and Retrieving RadioGroup input:
+Inside onCreate we instantiate our UI elements and add retrieve information about which element is checked.
+```java
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        // Custom Title and Message for custom Notification
+        mCustomTitle = (EditText) findViewById(R.id.notificationTitle);
+        mCustomMessage = (EditText) findViewById(R.id.notificationMessage);
+        
+        // RadioGroup for the customIcon
+        mCustomIconGroup = (RadioGroup) findViewById(R.id.iconGroup);
+        mCustomIconGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (group.getCheckedRadioButtonId()) {
+                    case R.id.icon1:
+                        mCustomIcon = R.drawable.ic_wear_notification;
+                        break;
+                    case R.id.icon2:
+                        mCustomIcon = R.drawable.ic_notification_2;
+                        break;
+                    case R.id.icon3:
+                        mCustomIcon = R.drawable.ic_notification3;
+                        break;
+                }
+            }
+        });
+        
+        // RadioGroup to determine if App Icons should be shown or not.
+        showHideIconGroup = (RadioGroup) findViewById(R.id.hideIconGroup);
+        showHideIconGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (group.getCheckedRadioButtonId()) {
+                    case R.id.showIcon:
+                        showIcon = true;
+                        break;
+                    case R.id.hideIcon:
+                        showIcon = false;
+                        break;
+                }
+            }
+        });
+    }
 ```
