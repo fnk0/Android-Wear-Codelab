@@ -120,7 +120,7 @@ So this might be a big chunk of code... if you alredy know Android XML layout fe
     />
     <Button
         android:id="@+id/bigNotificationWithAction"
-        android:text="Simple Notification With Action"
+        android:text="Big Notification With Action"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
@@ -206,3 +206,5 @@ So this might be a big chunk of code... if you alredy know Android XML layout fe
     />
 </LinearLayout>
 ```
+###### Your layout should look similar (or identitical) to this.
+![app-screenshot](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/app-screenshot2.png)
