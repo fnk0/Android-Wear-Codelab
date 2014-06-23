@@ -16,10 +16,12 @@ Feel free to use or modify this codelab for your own purpose.
 ![SDK Manager] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/SDK%20Manager%20Screenshot.png)
 
 ###### Creating a new Android Wear Emulator
-![Create Emulator] (https://github.com/fnk0/Android-Wear-Codelab/blob/master/tutorial-assets/Screenshot%202014-06-22%2022.09.12.png)
+![Create Emulator] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.09.12.png)
 
 ###### Starting the Emulator
 
 1. Start the Emulator with the AVD Manager
 2. Start the Android Wear App on your device and click in connect.
 3. Navigate to android-studio/sdk/platform-tools folder and use the following command: adb -d forward tcp:5601 tcp:5601
+
+![Not connected] (https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/tutorial-assets/Screenshot%202014-06-22%2022.22.47.png)
