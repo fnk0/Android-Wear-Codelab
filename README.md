@@ -438,3 +438,13 @@ For this Action we will create another activity. Our goal is to start another ac
         />
 </LinearLayout>
 ```
+2. Instantiate the XML elements in your activity.
+```java
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+        TextView mTextView = (TextView) findViewById(R.id.extraMessage);
+        ImageView mImageView = (ImageView) findViewById(R.id.extraPhoto);
+    }
+```
