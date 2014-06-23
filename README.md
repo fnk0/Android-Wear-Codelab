@@ -308,33 +308,30 @@ We will add this before the switch so all the variables can be shared between th
 // Define the method to send the notifications with the same name from the Android onClick from the XML Layout
 public void sendNotification(View view) {
 
-        // Common elements for all our notifications
-        int notificationId = 001; // id- An identifier for this notification unique within your application.
-        String eventTitle = "Sample Notification"; // Title for the notificaiton
-        String eventText = "Text for the notification."; // Text for the notificaiton
-        String intentExtra = "This is an extra String!"; // Extra String to be passed to a intent
-        // A large String to be used by the BigStyle
-        String eventDescription = "This is supposed to  be a content that will not fit the normal content screen"
-                + " usually a bigger text, by example a long text message or email."; 
- 
-        
-        // Build intent for notification content - This will take us to our MainActivity
-        Intent viewIntent = new Intent(this, MainActivity.class);
-        PendingIntent viewPendingIntent = PendingIntent.getActivity(this, 0, viewIntent, 0);
+    // Common elements for all our notifications
+    int notificationId = 001; // id- An identifier for this notification unique within your application.
+    String eventTitle = "Sample Notification"; // Title for the notificaiton
+    String eventText = "Text for the notification."; // Text for the notificaiton
+    String intentExtra = "This is an extra String!"; // Extra String to be passed to a intent
+    // A large String to be used by the BigStyle
+    String eventDescription = "This is supposed to  be a content that will not fit the normal content screen"
+            + " usually a bigger text, by example a long text message or email."; 
 
-        // Specify the 'big view' content to display the long
-        // event description that may not fit the normal content text.
-        NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
-        
-        // We instantiate as null because they will be changing based on which button is pressed
-        NotificationCompat.Builder mBuilder = null; 
-        Notification mNotification = null;
+    // Build intent for notification content - This will take us to our MainActivity
+    Intent viewIntent = new Intent(this, MainActivity.class);
+    PendingIntent viewPendingIntent = PendingIntent.getActivity(this, 0, viewIntent, 0);
 
-        // Get an instance of the NotificationManager service
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-
-
+    // Specify the 'big view' content to display the long
+    // event description that may not fit the normal content text.
+    NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
     
+    // We instantiate as null because they will be changing based on which button is pressed
+    NotificationCompat.Builder mBuilder = null; 
+    Notification mNotification = null;
+
+    // Get an instance of the NotificationManager service
+    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
     switch(view.getId()) {
         case R.id.simpleNotification:
             break;
@@ -350,4 +347,27 @@ public void sendNotification(View view) {
     }
 }
 
+```
+
+#### Building the Notifications: 
+Now it's time to build the notification we want to display based on the user input.
+You can use anything you want to build and send notifications. Can be game scores, alarm clocks, etc.. 
+Let's keep it simple for this codelab and get input directly from the user.
+
+Let's modify our switch cases for each one of our base cases.
+
+###### 1. Simple Notification
+This is the simplest form of a notification with 4 elements.
+1. A drawable for the notification. We use one of the drawables created by the asset manager.
+2. A title for the notification
+3. A message to be displayed
+4. The intent that should be opened by this notification.
+```java
+case R.id.simpleNotification:
+    mBuilder = new NotificationCompat.Builder(this) // Instantiate the builder with our context.
+            .setSmallIcon(R.drawable.ic_wear_notification) // set the icon
+            .setContentTitle(eventTitle) // set the title
+            .setContentText(eventText) // set the text
+            .setContentIntent(viewPendingIntent); // and finally the intent to be used
+    break;
 ```
