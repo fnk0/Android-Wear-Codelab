@@ -370,6 +370,7 @@ case R.id.simpleNotification:
             .setSmallIcon(R.drawable.ic_wear_notification) // set the icon
             .setContentTitle(eventTitle) // set the title
             .setContentText(eventText) // set the text
+            .setAutoCancel(true)  // This flag makes the notification disappear when the user clicks on it!
             .setContentIntent(viewPendingIntent); // and finally the intent to be used
     break;
 ```
@@ -410,9 +411,13 @@ case R.id.bigNotification:
         .setContentTitle(eventTitle) // This is unnecessary for the big notification if you use bigText
         .setContentText(eventText) // Unnecessary if setBigContentTitle is Overriden
         .setContentIntent(viewPendingIntent)
+        .setAutoCancel(true)
         .setStyle(bigStyle);
     break;
 ```
+
+The notification in the wear device should look somewhat like this:
+![bigNot1](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/big-not.png)
 
 ###### 3. BigView notification with an Action button:
 For this Action we will create another activity. Our goal is to start another activity from the intent and set a message + show the picture that is set as the largeIcon.
@@ -475,12 +480,14 @@ case R.id.bigNotificationWithAction:
     photoIntent.putExtra("photo", R.drawable.ic_sample_codelab); // Send the photo to the next activity
     
     PendingIntent photoPending = PendingIntent.getActivity(this, 0, photoIntent, 0); // set a new pending intent
+    bigStyle.setBigContentTitle("Mr. Flowers"); // title for the Big Text
     bigStyle.bigText("Check out this picture!! :D"); // Message in the Big Text
     mBuilder = new NotificationCompat.Builder(this)
             .setSmallIcon(R.drawable.ic_wear_notification) // Small icon for our notification
             .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_sample_codelab)) // The PNG picture
             .setContentIntent(viewPendingIntent) // This will be the default OPEN button.
             .addAction(R.drawable.ic_photo, "See Photo", photoPending) // This is our extra action. With an Extra Icon and pointing to the other PendingIntent
+            .setAutoCancel(true)
             .setStyle(bigStyle); // Add the bigStyle
     break;
 ```
@@ -493,6 +500,7 @@ case R.id.sendCustomNotification:
     mBuilder = new NotificationCompat.Builder(this)
             .setSmallIcon(mCustomIcon) // This time we set the icon to be whenever icon is selected by the user 
             .setContentTitle(mCustomTitle.getText().toString()) // We set the contentTitle to the text in the EditText
+            .setAutoCancel(true)
             .setContentText(mCustomMessage.getText().toString()) // We set the contentText to the message set by the user
             .setContentIntent(viewPendingIntent); // set an intent to receive the Open action.
 
