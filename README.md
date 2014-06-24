@@ -497,6 +497,7 @@ case R.id.bigNotificationWithAction:
 ```
 
 The Action button with our Custom Icon to view the photo:
+
 ![bigNotAction](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/big-not5.png)
 
 ###### Creating our custom notification.
