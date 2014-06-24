@@ -169,7 +169,6 @@ public class MainActivity extends Activity {
                     .setStyle(bigStyle);
                 break;
             case R.id.bigNotificationWithAction:
-
                 Intent photoIntent = new Intent(this, SecondActivity.class); // Intent pointing to our second activity
                 photoIntent.putExtra("message", intentExtra); // Set the extra message that will open in the next activity
                 photoIntent.putExtra("photo", R.drawable.ic_sample_codelab); // Send the photo to the next activity
@@ -200,6 +199,8 @@ public class MainActivity extends Activity {
                 break;
         }
 
+        // This check will allow us to display the normal notification or the Wearable notification if the
+        // notification is a CustomNotification
         if(view.getId() != R.id.sendCustomNotification) {
             // Build the notification and issues it with notification manager.
             notificationManager.notify(notificationId, mBuilder.build());

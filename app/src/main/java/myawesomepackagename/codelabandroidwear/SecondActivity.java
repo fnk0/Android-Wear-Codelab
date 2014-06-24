@@ -47,13 +47,13 @@ public class SecondActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        Intent extraIntent = getIntent();
+            Intent extraIntent = getIntent();
 
-        TextView mTextView = (TextView) findViewById(R.id.extraMessage);
-        ImageView mImageView = (ImageView) findViewById(R.id.extraPhoto);
+            TextView mTextView = (TextView) findViewById(R.id.extraMessage);
+            ImageView mImageView = (ImageView) findViewById(R.id.extraPhoto);
 
-        mTextView.setText(extraIntent.getStringExtra("message")); // Retrieve the text and set it to our TextView
-        mImageView.setImageResource(extraIntent.getIntExtra("photo", 0)); // The zero is a default value in case the intent extra is empty.
+            mTextView.setText(extraIntent.getStringExtra("message")); // Retrieve the text and set it to our TextView
+            mImageView.setImageResource(extraIntent.getIntExtra("photo", 0)); // The zero is a default value in case the intent extra is empty.
     }
 
 
