@@ -417,6 +417,7 @@ case R.id.bigNotification:
 ```
 
 The notification in the wear device should look somewhat like this:
+
 ![bigNot1](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/big-not.png)
 
 Since the text is set as a big text it can now expand itself to allow the user to scroll and read the text inside.
