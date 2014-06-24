@@ -155,6 +155,7 @@ public class MainActivity extends Activity {
                         .setSmallIcon(R.drawable.ic_wear_notification)
                         .setContentTitle(eventTitle)
                         .setContentText(eventText)
+                        .setAutoCancel(true)  // This flag makes the notification disappear when the user clicks on it!
                         .setContentIntent(viewPendingIntent);
                 break;
             case R.id.bigNotification:
@@ -166,6 +167,7 @@ public class MainActivity extends Activity {
                     .setContentTitle(eventTitle) // This is unnecessary for the big notification if you use bigText
                     .setContentText(eventText) // Unnecessary if setBigContentTitle is Overriden
                     .setContentIntent(viewPendingIntent)
+                    .setAutoCancel(true)
                     .setStyle(bigStyle);
                 break;
             case R.id.bigNotificationWithAction:
@@ -174,13 +176,14 @@ public class MainActivity extends Activity {
                 photoIntent.putExtra("photo", R.drawable.ic_sample_codelab); // Send the photo to the next activity
 
                 PendingIntent photoPending = PendingIntent.getActivity(this, 0, photoIntent, 0); // set a new pending intent
-
+                bigStyle.setBigContentTitle("Mr. Flowers");
                 bigStyle.bigText("Check out this picture!! :D");
                 mBuilder = new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_wear_notification)
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_sample_codelab))
                         .setContentIntent(viewPendingIntent) // This will be the default OPEN button.
                         .addAction(R.drawable.ic_photo, "See Photo", photoPending) // This is our extra action. With an Extra Icon and pointing to the other PendingIntent
+                        .setAutoCancel(true)
                         .setStyle(bigStyle);
                 break;
             case R.id.sendCustomNotification:
@@ -188,6 +191,7 @@ public class MainActivity extends Activity {
                         .setSmallIcon(mCustomIcon)
                         .setContentTitle(mCustomTitle.getText().toString())
                         .setContentText(mCustomMessage.getText().toString())
+                        .setAutoCancel(true)
                         .setContentIntent(viewPendingIntent);
 
                 // This is an example of the NEW WearableNotification SDK.
@@ -203,6 +207,7 @@ public class MainActivity extends Activity {
         // notification is a CustomNotification
         if(view.getId() != R.id.sendCustomNotification) {
             // Build the notification and issues it with notification manager.
+
             notificationManager.notify(notificationId, mBuilder.build());
             Log.d(LOG_TAG, "Normal Notification");
         } else {
