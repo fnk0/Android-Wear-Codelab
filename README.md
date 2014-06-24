@@ -496,6 +496,9 @@ case R.id.bigNotificationWithAction:
     break;
 ```
 
+The Action button with our Custom Icon to view the photo:
+![bigNotAction](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/big-not5.png)
+
 ###### Creating our custom notification.
 Our custom notification will let the user set a title, a message, select the Icon to display in the notification and will give an option if the user wants to show or not the App Icon.
 ```java
