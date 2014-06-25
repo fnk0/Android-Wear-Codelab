@@ -219,7 +219,7 @@ If your layout doesn't looks like this is because of the Style. Open the file re
 
 To... :
 ```xml
-<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+<style name="AppTheme" parent="android:Theme.Holo">
 ```
 
 #### Getting our hands into the coding (fun) part of the project.
