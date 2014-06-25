@@ -399,6 +399,7 @@ The notification should be displayed on your phone like this:
 ###### 2. Big View Notification
 Most of the contents of the big notification are the same. 
 There are a few different things to pay attention here.
+
 1. the Large Icon. The large icon is displayed behind the notificaiton as a background. The difference to the small icon is that we will be using BitmapFactory.decodeResource() decode a png file.
 2. The setContentTitle and setContentText will be overriden by the bigStyle.bigText and bigStyle.setBigContentTitle.
 ```java
