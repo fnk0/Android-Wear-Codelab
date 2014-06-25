@@ -26,9 +26,9 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 3. Navigate to android-studio/sdk/platform-tools folder and use the following command: 
 ```adb -d forward tcp:5601 tcp:5601``` (This command should be used every time you connect your phone to the computer. Or every time you restart the emulator). If for some reason you still can not connect both devices try using ```adb devices``` and ensure that both devices are connected. 
 
-<img src="https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/android-wear-app.png" alt="Android Wear Preview App" style="width:100px;height:150px">
+![android-wear-app](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/android-wear-app.fw.png)
 
-<font color='red'> Not Connected :( </font>
+<font style="color:'red';"> Not Connected :( </font>
 
 ![Not connected](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Screenshot%202014-06-22%2022.22.47.png)
 
@@ -386,7 +386,7 @@ Log.d(LOG_TAG, "Normal Notification");
 * Now let's try it out!! Runt he App and click on the first button.
 The notification should be displayed on your phone like this:
 
-![firstNotification](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/notifications-1.fw.png)
+![firstNotification](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/android-wear-app.fw.png)
 
 * The notifications should also appear on the device like this:
 
@@ -499,6 +499,10 @@ case R.id.bigNotificationWithAction:
 The Action button with our Custom Icon to view the photo:
 
 ![bigNotAction](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/big-not5.png)
+
+And this is how the same notification looks in the cellphone
+
+![mr-flowers](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/mr-flowers.png)
 
 ###### Creating our custom notification.
 Our custom notification will let the user set a title, a message, select the Icon to display in the notification and will give an option if the user wants to show or not the App Icon.
