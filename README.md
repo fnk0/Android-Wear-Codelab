@@ -56,7 +56,7 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 
 ###### Add the necessary Libraries:
 
-![add-libs](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Adding-libs-folder.png)
+![add-libs](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/add-libs-folder.png)
 
 ###### Add the necessary dependencies to the build.gradle file:
 ![dependencies](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Screenshot%202014-06-22%2023.04.15.png)
