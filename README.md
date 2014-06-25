@@ -209,7 +209,18 @@ So this might be a big chunk of code... if you alredy know Android XML layout fe
 </LinearLayout>
 ```
 ###### Your layout should look similar (or identitical) to this.
-![app-screenshot](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/app-screenshot2.png)
+![app-screenshot](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/resized-screenshot1.png)
+
+If your layout doesn't looks like this is because of the Style. Open the file res/values/styles.xml and change:
+
+```xml
+<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+```
+
+To... :
+```xml
+<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+```
 
 #### Getting our hands into the coding (fun) part of the project.
 
