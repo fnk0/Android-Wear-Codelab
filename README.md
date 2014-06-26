@@ -9,7 +9,7 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 ###### Necessary Software
 1. JDK - Java Development Kit
 2. Android Studio
-3. [Device with the Android Wear Preview beta app installed](https://play.google.com/store/apps/details?id=com.google.android.wearablepreview.app)
+3. [Device with the Android Wear Preview beta app installed](https://plus.url.google.com/url?sa=z&n=1403822851878&url=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F0B_5cYTqucml9VVdVQ19LekNmekU%2Fedit%3Fusp%3Dsharing&usg=h6_jKhRI6IvOTbw5AfaCNd758Fc.)
 4. [wearable-preview-support.jar](https://drive.google.com/file/d/0B06g43ltjGbwQUlCdXR4X2Ftcjg/edit?usp=sharing) 
 5. Android Wear Emulator 
 
