@@ -12,6 +12,7 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 3. [Device with the Android Wear Preview beta app installed](https://plus.url.google.com/url?sa=z&n=1403822851878&url=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F0B_5cYTqucml9VVdVQ19LekNmekU%2Fedit%3Fusp%3Dsharing&usg=h6_jKhRI6IvOTbw5AfaCNd758Fc.)
 4. [wearable-preview-support.jar](https://drive.google.com/file/d/0B06g43ltjGbwQUlCdXR4X2Ftcjg/edit?usp=sharing) 
 5. Android Wear Emulator 
+6. Get the old emulator image [here](https://aur.archlinux.org/packages/android-wear-armv7a-eabi-system-image-19/)
 
 ###### Installing Necessary SDK Packages
 ![SDK Manager](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/SDK%20Manager%20Screenshot.png)
