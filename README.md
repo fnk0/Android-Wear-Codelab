@@ -61,7 +61,7 @@ Android Studio Beta 0.8.2 Already come with some pre-built in emulator definitio
 
 ![nameActivity](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Screenshot%202014-06-22%2022.37.15.png)
 
-###### Add the necessary Libraries:
+###### Adding a Android Wear Module
 
 ![add-libs](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/add-libs-folder.png)
 
