@@ -568,7 +568,7 @@ Give it a try now and play with the different notifications!!!
 ##### Replacing the Watch Stub faces:
 In this tutorial we are not going to use the Watch Stub faces. 
 We open the file wear_activity and replace the code that is already there with:
-```
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <android.support.wearable.view.GridViewPager
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -585,7 +585,7 @@ This code will place a empty GridViewPager adapter. This Grid View Pager will be
 ##### Creating the GridPage -> This will be a very simple Class that will hold the data for each Page of our GridPagerAdapter
 
 GridPage.java
-```
+```java
  public class GridPage  {
      private String mTitle;
      private String mText;
@@ -631,7 +631,7 @@ The GridRow will also have handy methods for:
 3. Setting the pages
 4. Getting the desired page
 
-```
+```java
     public class GridRow  {
         ArrayList<GridPage> mPages = new ArrayList<GridPage>();
         public GridRow() {}
