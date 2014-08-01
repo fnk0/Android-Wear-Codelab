@@ -581,6 +581,56 @@ We open the file wear_activity and replace the code that is already there with:
      />
 ```
 This code will place a empty GridViewPager adapter. This Grid View Pager will be them populated from the Java Code using a FragmentGridPagerAdapter
+
+##### Creating the GridPage -> This will be a very simple Class that will hold the data for each Page of our GridPagerAdapter
+
+GridPage.java
+```
+    public class GridPage  {
+    
+        private String mTitle;
+        private String mText;
+        private int mIcon;
+        private int mBackground;
+    
+        /**
+         * Constructor for the GridPage
+         * @param mTitle
+         *          Title for the card
+         * @param mText
+         *          Text for the card
+         * @param mIcon
+         *          Icon that will be on the right of the title
+         * @param mBackground
+         *          The Background image to be used by the fragment. The card will overlay on top of the background.
+         */
+        public GridPage(String mTitle, String mText, int mIcon, int mBackground) {
+            this.mTitle = mTitle;
+            this.mText = mText;
+            this.mIcon = mIcon;
+            this.mBackground = mBackground;
+        }
+    
+        public String getTitle() {
+            return mTitle;
+        }
+    
+        public String getText() {
+            return mText;
+        }
+    
+    
+        public int getIcon() {
+            return mIcon;
+        }
+    
+    
+        public int getBackground() {
+            return mBackground;
+        }
+    
+    }
+```
      
 
 ###### Thanks for doing this tutorial. I hope you enjoy it!!
