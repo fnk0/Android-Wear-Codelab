@@ -742,5 +742,9 @@ private GridViewPager mPager;
     }
 ```
 
+And.. if everything went OK you should now see in your watch a card that looks kinda like this:
+
+![wear page1](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/wear_screen1.png)
+
 ###### Thanks for doing this tutorial. I hope you enjoy it!!
 Any questions, suggestions email me! marcus@gabilheri.com
