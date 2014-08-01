@@ -8,12 +8,10 @@ package com.gabiheri.codelabandroidwear.gridAdapter;
  * @since 8/1/14.
  */
 public class GridPage  {
-
     private String mTitle;
     private String mText;
     private int mIcon;
     private int mBackground;
-
     /**
      * Constructor for the GridPage
      * @param mTitle
@@ -31,23 +29,16 @@ public class GridPage  {
         this.mIcon = mIcon;
         this.mBackground = mBackground;
     }
-
     public String getTitle() {
         return mTitle;
     }
-
     public String getText() {
         return mText;
     }
-
-
     public int getIcon() {
         return mIcon;
     }
-
-
     public int getBackground() {
         return mBackground;
     }
-
 }

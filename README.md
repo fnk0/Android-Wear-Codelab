@@ -586,52 +586,76 @@ This code will place a empty GridViewPager adapter. This Grid View Pager will be
 
 GridPage.java
 ```
-    public class GridPage  {
-    
-        private String mTitle;
-        private String mText;
-        private int mIcon;
-        private int mBackground;
-    
-        /**
-         * Constructor for the GridPage
-         * @param mTitle
-         *          Title for the card
-         * @param mText
-         *          Text for the card
-         * @param mIcon
-         *          Icon that will be on the right of the title
-         * @param mBackground
-         *          The Background image to be used by the fragment. The card will overlay on top of the background.
-         */
-        public GridPage(String mTitle, String mText, int mIcon, int mBackground) {
-            this.mTitle = mTitle;
-            this.mText = mText;
-            this.mIcon = mIcon;
-            this.mBackground = mBackground;
+ public class GridPage  {
+     private String mTitle;
+     private String mText;
+     private int mIcon;
+     private int mBackground;
+     /**
+      * Constructor for the GridPage
+      * @param mTitle
+      *          Title for the card
+      * @param mText
+      *          Text for the card
+      * @param mIcon
+      *          Icon that will be on the right of the title
+      * @param mBackground
+      *          The Background image to be used by the fragment. The card will overlay on top of the background.
+      */
+     public GridPage(String mTitle, String mText, int mIcon, int mBackground) {
+         this.mTitle = mTitle;
+         this.mText = mText;
+         this.mIcon = mIcon;
+         this.mBackground = mBackground;
+     }
+     public String getTitle() {
+         return mTitle;
+     }
+     public String getText() {
+         return mText;
+     }
+     public int getIcon() {
+         return mIcon;
+     }
+     public int getBackground() {
+         return mBackground;
+     }
+ }
+```
+As you can see this is just a very simple class that will hold the Data for the Page and return when we need it.
+
+##### Creating the GridRow -> Grid Row is a very simple class also that will hold a ArrayList of GridPages
+The GridRow will also have handy methods for:
+1. Adding new Pages
+2. Getting the size of the row
+3. Setting the pages
+4. Getting the desired page
+
+```
+    public class GridRow  {
+        ArrayList<GridPage> mPages = new ArrayList<GridPage>();
+        public GridRow() {}
+        public GridRow(ArrayList<GridPage> mPages) {
+            this.mPages = mPages;
         }
-    
-        public String getTitle() {
-            return mTitle;
+        public GridPage getPage(int index) {
+            return mPages.get(index);
         }
-    
-        public String getText() {
-            return mText;
+        public void addPage(GridPage mPage) {
+            mPages.add(mPage);
         }
-    
-    
-        public int getIcon() {
-            return mIcon;
+        public int getSize() {
+            return mPages.size();
         }
-    
-    
-        public int getBackground() {
-            return mBackground;
+        public ArrayList<GridPage> getPagesArray() {
+            return mPages;
         }
-    
+        public void setPages(ArrayList<GridPage> mPages) {
+            this.mPages = mPages;
+        }
     }
 ```
-     
+
 
 ###### Thanks for doing this tutorial. I hope you enjoy it!!
 Any questions, suggestions email me! marcus@gabilheri.com
