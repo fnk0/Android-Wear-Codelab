@@ -22,6 +22,6 @@ android {
 dependencies {
     compile 'com.google.android.gms:play-services:4.4.52'
 
-    compile 'com.android.support:support-v4:21.0.0-rc1' // Support libraries
+    compile 'com.android.support:support-v4:19.1.+' // Support libraries
     compile fileTree(dir: 'libs', include: ['*.jar']) // This compiles all the .jar inside libs folder
 }

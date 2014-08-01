@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.wearable.view.GridViewPager
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gridPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".WearActivity"
+    tools:deviceIds="wear_round" />
