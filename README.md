@@ -13,7 +13,7 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 3. [Device with the Android Wear app installed](https://play.google.com/store/apps/details?id=com.google.android.wearable.app)
 4. Android 4.4W API 20
 5. Android Wear Emulator
-6. The Android Wear SDK Documentation ![sdk link](https://developer.android.com/shareables/training/wearable-support-docs.zip) 
+6. The Android Wear SDK Documentation ![sdk link](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary) 
 
 ###### Installing Necessary SDK Packages
 ![SDK Manager](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/WearSDK20.png)
@@ -655,6 +655,12 @@ The GridRow will also have handy methods for:
         }
     }
 ```
+
+###### Creating the GridPageAdapter -> 
+
+There's a few things to notice here.
+1. We override the getBackground() to set the background for each of the pages. 
+2. We override the getRowCount() so the adapter know where to look for its size
 
 
 ###### Thanks for doing this tutorial. I hope you enjoy it!!
