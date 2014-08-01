@@ -63,6 +63,11 @@ Android Studio Beta 0.8.2 Already come with some pre-built in emulator definitio
 
 ###### Adding a Android Wear Module
 
+![create a new module](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/creating_wear_module/Screenshot%202014-08-01%2012.38.23.png)
+
+1. Select Android Wear Module
+2. Use SDK 20 for all the options. Give it the same name as Your app and name the module wear.
+
 
 
 #### Creating the Notification ICON:
