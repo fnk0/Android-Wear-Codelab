@@ -18,7 +18,13 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 ![SDK Manager](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab-Preview/master/screenshots/SDK%20Manager%20Screenshot.png)
 
 ###### Creating a new Android Wear Emulator
-![Create Emulator](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Screenshot%202014-06-22%2022.09.12.png)
+Android Studio Beta 0.8.2 Already come with some pre-built in emulator definitions that we will use as a base for our own emulators. 
+![Device Defaults](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab-Preview/master/screenshots/device_defaults.png)
+
+![Creating the emulator](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab-Preview/master/screenshots/new_device_screen.png)
+
+![Visualizing all emulators](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab-Preview/master/screenshots/all_emulators.png)
+
 
 ###### Starting the Emulator
 
@@ -27,15 +33,15 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 3. Navigate to android-studio/sdk/platform-tools folder and use the following command: 
 ```adb -d forward tcp:5601 tcp:5601``` (This command should be used every time you connect your phone to the computer. Or every time you restart the emulator). If for some reason you still can not connect both devices try using ```adb devices``` and ensure that both devices are connected. 
 
-![android-wear-app](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/android-wear-app.fw.png)
+![android-wear-app](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab-Preview/master/screenshots/phone_wear_app.fw.png)
 
 <font style="color:'red';"> Not Connected :( </font>
 
-![Not connected](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Screenshot%202014-06-22%2022.22.47.png)
+![Not connected](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab-Preview/master/screenshots/wear.png)
 
 <font color='red'> Connected :) </font>
 
-![Connected](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Screenshot%202014-06-22%2022.24.08.png)
+![Connected](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab-Preview/master/screenshots/wear_connected.png)
 
 #### Creating a New Project
 
