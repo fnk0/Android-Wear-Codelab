@@ -726,5 +726,21 @@ public class GridPagerAdapter extends FragmentGridPagerAdapter {
 }
 ```
 
+###### Adding the GridPagerAdapter to our Activity
+
+Now it's time to finally connect our adapter to the activity. Inside WearActivity place this following snippet.
+
+```java
+private GridViewPager mPager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_wear);
+        mPager = (GridViewPager) findViewById(R.id.gridPager);
+        mPager.setAdapter(new GridPagerAdapter(this, getFragmentManager()));
+    }
+```
+
 ###### Thanks for doing this tutorial. I hope you enjoy it!!
 Any questions, suggestions email me! marcus@gabilheri.com
