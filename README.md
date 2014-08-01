@@ -15,7 +15,7 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 5. Android Wear Emulator 
 
 ###### Installing Necessary SDK Packages
-![SDK Manager](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab-Preview/master/screenshots/SDK%20Manager%20Screenshot.png)
+![SDK Manager](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/WearSDK20.png)
 
 ###### Creating a new Android Wear Emulator
 Android Studio Beta 0.8.2 Already come with some pre-built in emulator definitions that we will use as a base for our own emulators. 
