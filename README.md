@@ -12,7 +12,8 @@ If you find a bug leave an issue and I will fix as soon as possible. The code wo
 2. Android Studio 0.8.x Beta installed
 3. [Device with the Android Wear app installed](https://play.google.com/store/apps/details?id=com.google.android.wearable.app)
 4. Android 4.4W API 20
-5. Android Wear Emulator 
+5. Android Wear Emulator
+6. The Android Wear SDK Documentation ![sdk link](https://developer.android.com/shareables/training/wearable-support-docs.zip) 
 
 ###### Installing Necessary SDK Packages
 ![SDK Manager](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/WearSDK20.png)
@@ -564,6 +565,23 @@ Give it a try now and play with the different notifications!!!
 
 #### Updated Version of the Tutorial. Creating a Simple Grid Page Adapter:
 
+##### Replacing the Watch Stub faces:
+In this tutorial we are not going to use the Watch Stub faces. 
+We open the file wear_activity and replace the code that is already there with:
+```
+    <?xml version="1.0" encoding="utf-8"?>
+    <android.support.wearable.view.GridViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/gridPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        tools:context=".WearActivity"
+     />
+```
+This code will place a empty GridViewPager adapter. This Grid View Pager will be them populated from the Java Code using a FragmentGridPagerAdapter
+     
 
 ###### Thanks for doing this tutorial. I hope you enjoy it!!
-Any questions, suggestions email me! marcusandreog@gmail.com
+Any questions, suggestions email me! marcus@gabilheri.com

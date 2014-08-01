@@ -7,4 +7,4 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true"
     tools:context=".WearActivity"
-     />
+ />
