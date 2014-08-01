@@ -63,17 +63,7 @@ Android Studio Beta 0.8.2 Already come with some pre-built in emulator definitio
 
 ###### Adding a Android Wear Module
 
-![add-libs](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/add-libs-folder.png)
 
-###### Add the necessary dependencies to the build.gradle file:
-![dependencies](https://raw.githubusercontent.com/fnk0/Android-Wear-Codelab/master/screenshots/Screenshot%202014-06-22%2023.04.15.png)
-
-```groovy
-dependencies {
-    compile 'com.android.support:support-v4:19.1.+' // Support libraries
-    compile fileTree(dir: 'libs', include: ['*.jar']) // This compiles all the .jar inside libs folder
-}
-```
 
 #### Creating the Notification ICON:
 
