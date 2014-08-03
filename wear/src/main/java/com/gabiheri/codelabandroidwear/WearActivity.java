@@ -23,5 +23,8 @@ public class WearActivity extends Activity {
         setContentView(R.layout.activity_wear);
         mPager = (GridViewPager) findViewById(R.id.gridPager);
         mPager.setAdapter(new GridPagerAdapter(this, getFragmentManager()));
+
     }
+
 }
+
