@@ -1,13 +1,11 @@
 package myawesomepackagename.codelabandroidwear;
 
 import android.app.Activity;
-import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preview.support.v4.app.NotificationManagerCompat;
-import android.preview.support.wearable.notifications.WearableNotifications;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.Menu;
@@ -143,7 +141,7 @@ public class MainActivity extends Activity {
         NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
 
         NotificationCompat.Builder mBuilder = null;
-        Notification mNotification = null;
+        NotificationCompat mNotification = null;
 
         // Get an instance of the NotificationManager service
         NotificationManagerCompat notificationManager =
@@ -197,23 +195,15 @@ public class MainActivity extends Activity {
                 // This is an example of the NEW WearableNotification SDK.
                 // The WearableNotification has special functionality for wearable devices
                 // By example the setHintHideIcon hides the APP ICON from the notification.
-                mNotification = new WearableNotifications.Builder(mBuilder)
-                        .setHintHideIcon(!showIcon)
-                        .build();
+                
+                NotificationCompat.WearableExtender wearableExtender = new NotificationCompat.WearableExtender(mBuilder.build());
+                wearableExtender.setHintHideIcon(!showIcon);
+                wearableExtender.extend(mBuilder);
                 break;
         }
 
-        // This check will allow us to display the normal notification or the Wearable notification if the
-        // notification is a CustomNotification
-        if(view.getId() != R.id.sendCustomNotification) {
-            // Build the notification and issues it with notification manager.
+        notificationManager.notify(notificationId, mBuilder.build());
+        Log.d(LOG_TAG, "Normal Notification");
 
-            notificationManager.notify(notificationId, mBuilder.build());
-            Log.d(LOG_TAG, "Normal Notification");
-        } else {
-            // Use the Wearable Notification Builder
-            notificationManager.notify(notificationId, mNotification);
-            Log.d(LOG_TAG, "Wear Notification");
-        }
     }
 }
