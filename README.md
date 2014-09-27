@@ -94,6 +94,49 @@ The android wear notifications by default have an icon embed to it. So let's cha
 * Grab the app icon from from [here](https://github.com/fnk0/Android-Wear-Codelab/blob/master/assets/wear-codelab-icon.png) our use any other image you want. 
 * Repeat the same process of adding the notification Icon but this time select Launcher Icons. Ps: Do not change the name this time. If we leave ic_launcher as the name it will override our standard icon.
 * Click in Finish and now we are all set!
+* 
+#### Adding Necessary imports to our build.gradle. The gradle file will tell Android Studio which libraries are available to use. If you wish to learn more about Gradle I suggest to look at [Romin Irani Gradle Tutorial](http://rominirani.com/2014/07/28/gradle-tutorial-series-an-overview/) which will explain in detail what gradle is and does. 
+
+###### Inside the module *app* open the file *build.gradle*. The path should be *app/build.gradle*. Be sure to change the build.gradle file inside the module app. A common mistake for most novices with gradle is to change the other build.gradle files. 
+
+```groovy
+// app/build.gradle
+
+apply plugin: 'com.android.application' // This tells gradle that we should use the Android Plugin
+
+android {
+    // The version of android to which we are compiling for
+    compileSdkVersion 19 
+    // The build tools that we are using. If you get a error open SDK Manager and download the build tools.
+    // By the time you do this tutorial the buildToolsVersion will probably be updated...
+    // I suggest to just use the one that was set by default for you by the Android SDK.
+    buildToolsVersion "19.1.0" 
+
+    defaultConfig {
+        applicationId "myawesomepackagename.codelabandroidwear" // The package name of your app, do not change this
+        minSdkVersion 15 // The minimum SDK version that you wish to support
+        targetSdkVersion 19 // The target SDK version (usually the same as compileSdkVersion
+        versionCode 1 // The version code used by the Play Store to keep track of the revisions
+        versionName "1.0" // The version code that the User seems on the Play Store
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' 
+        }
+    }
+}
+
+dependencies {
+  
+    compile 'com.google.android.gms:play-services:5.0.77' // Google Play Services API's
+    // Support libraries is used to support older versions of Android
+    // Most of the linbraries that we will be  using for the Wearable notifications comes from this support libraries.
+    compile 'com.android.support:support-v4:20.0.0' 
+    compile fileTree(dir: 'libs', include: ['*.jar']) // This compiles all the .jar inside libs folder
+}
+
+````
 
 #### Creating the Main Activity XML-Layout
 
@@ -528,40 +571,24 @@ And this is how the same notification looks in the cellphone
 Our custom notification will let the user set a title, a message, select the Icon to display in the notification and will give an option if the user wants to show or not the App Icon.
 ```java
 case R.id.sendCustomNotification:
-    // We instantiate the builder again
     mBuilder = new NotificationCompat.Builder(this)
-            .setSmallIcon(mCustomIcon) // This time we set the icon to be whenever icon is selected by the user 
-            .setContentTitle(mCustomTitle.getText().toString()) // We set the contentTitle to the text in the EditText
-            .setAutoCancel(true)
-            .setContentText(mCustomMessage.getText().toString()) // We set the contentText to the message set by the user
-            .setContentIntent(viewPendingIntent); // set an intent to receive the Open action.
+                        .setSmallIcon(mCustomIcon)
+                        .setContentTitle(mCustomTitle.getText().toString())
+                        .setContentText(mCustomMessage.getText().toString())
+                        .setAutoCancel(true)
+                        .setContentIntent(viewPendingIntent);
 
-    // This is an example of the NEW WearableNotification SDK.
-    // The WearableNotification has special functionality for wearable devices
-    // By example the setHintHideIcon hides the APP ICON from the notification.
-    mNotification = new WearableNotifications.Builder(mBuilder)
-            .setHintHideIcon(!showIcon) // This will determine if we should show or not the Icon of the app
-            .build();
-    break;
-```
-Now that we have another type of notification to display we need to add a case to our notify call.
-After the switch replace the code that is already there with:
-```java
-// This check will allow us to display the normal notification or the Wearable notification if the
-// notification is a CustomNotification
-if(view.getId() != R.id.sendCustomNotification) {
-    // Build the notification and issues it with notification manager.
-    notificationManager.notify(notificationId, mBuilder.build());
-    Log.d(LOG_TAG, "Normal Notification");
-} else {
-    // Use the Wearable Notification Builder
-    notificationManager.notify(notificationId, mNotification);
-    Log.d(LOG_TAG, "Wear Notification");
-}
+                // This is an example of the NEW WearableNotification SDK.
+                // The WearableNotification has special functionality for wearable devices
+                // By example the setHintHideIcon hides the APP ICON from the notification.
+
+                NotificationCompat.WearableExtender wearableExtender = new NotificationCompat.WearableExtender(mBuilder.build());
+                wearableExtender.setHintHideIcon(!showIcon);
+                wearableExtender.extend(mBuilder);
+                break;
 ```
 
 Give it a try now and play with the different notifications!!!
-
 
 #### Updated Version of the Tutorial. Creating a Simple Grid Page Adapter:
 
