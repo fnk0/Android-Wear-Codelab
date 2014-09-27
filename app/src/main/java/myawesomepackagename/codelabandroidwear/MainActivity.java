@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preview.support.v4.app.NotificationManagerCompat;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -195,15 +194,12 @@ public class MainActivity extends Activity {
                 // This is an example of the NEW WearableNotification SDK.
                 // The WearableNotification has special functionality for wearable devices
                 // By example the setHintHideIcon hides the APP ICON from the notification.
-                
+                // This code is now Up to date thanks to Romin Irani!! Thanks!
                 NotificationCompat.WearableExtender wearableExtender = new NotificationCompat.WearableExtender(mBuilder.build());
                 wearableExtender.setHintHideIcon(!showIcon);
                 wearableExtender.extend(mBuilder);
                 break;
         }
-
         notificationManager.notify(notificationId, mBuilder.build());
-        Log.d(LOG_TAG, "Normal Notification");
-
     }
 }
