@@ -1,7 +1,7 @@
 Android-Wear-Codelab
 ====================
 
-Last Updated AT FRIDAY - AUGUST 01 / 2014
+Last Updated AT FRIDAY -  SEPTEMBER 27, 2014. Thank you [Romin Irani](http://rominirani.com/) for the hints on the outdated code! 
 ###### Android Wear codelab for the GDG OSU Stillwater
 This codelab was developed by Marcus Gabilheri to be used in the GDG OSU Stillwater I/O Extended event.
 Feel free to use or modify this codelab for your own purpose.
